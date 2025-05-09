@@ -15,7 +15,7 @@ alx-airbnb-database/
 │   ├── schema.sql
 │   └── README.md
 │
-├── inserts/                 # SQL sample data inserts
+├── database-script-0x02/    # SQL sample data inserts
 │   ├── seed.sql
 │   └── README.md
 │
@@ -32,7 +32,7 @@ Contains the visual **Entity Relationship Diagram (ERD)** that illustrates the r
 
 Includes SQL scripts to **create the database tables** with proper keys, constraints, and indexes. It ensures the schema is well-structured and normalized.
 
-### 3. `inserts/`
+### 3. `database-script-0x02/`
 
 Contains `INSERT` scripts with **sample data** for each entity. These help developers and testers simulate real-world scenarios.
 
