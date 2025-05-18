@@ -1,4 +1,14 @@
--- Implemented include:
+-- Query performance analysis before implementing indexes:
+
+EXPLAIN ANALYZE
+SELECT u.user_id, u.first_name, u.last_name
+FROM "User" u
+WHERE (
+	  SELECT COUNT(*)
+	  FROM Booking b
+	  WHERE u.user_id = b.user_id
+) > 3;
+
 
 -- Index on email for quick lookup
 CREATE INDEX idx_user_email ON "User"(email);
@@ -17,3 +27,14 @@ CREATE INDEX idx_booking_user_id ON Booking(user_id);
 
 -- Index on property and location_id for region-based searches
 CREATE INDEX idx_property_location_id ON Property(location_id);
+
+-- Query performance analysis after implementing indexes:
+
+EXPLAIN ANALYZE
+SELECT u.user_id, u.first_name, u.last_name
+FROM "User" u
+WHERE (
+	          SELECT COUNT(*)
+		          FROM Booking b
+			          WHERE u.user_id = b.user_id
+			) > 3;

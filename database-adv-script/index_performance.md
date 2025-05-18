@@ -53,7 +53,7 @@ CREATE INDEX idx_booking_user_id ON Booking(user_id);
 This index supports faster lookup of bookings by user, especially in filtering or aggregating conditions like COUNT(*).
 
 All indexes implemented include:
-
+i
 -- Index on email for quick lookup
 CREATE INDEX idx_user_email ON "User"(email);
 
